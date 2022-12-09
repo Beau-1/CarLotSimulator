@@ -8,15 +8,52 @@ namespace CarLotSimulator
         {
             //TODO
 
-            //Create a seperate class file called Car
-            //Car shall have the following properties: Year, Make, Model, EngineNoise, HonkNoise, IsDriveable
-            //Car shall have the following methods: MakeEngineNoise(), MakeHonkNoise()
-            //The methods should take one string parameter: the respective noise property
+            //Create a seperate class file called Car -Completed
+            //Car shall have the following properties: Year, Make, Model, EngineNoise, HonkNoise, IsDriveable - Done
+            //Car shall have the following methods: MakeEngineNoise(), MakeHonkNoise() - Done
+            //The methods should take one string parameter: the respective noise property -Done
 
 
             //Now that the Car class is created we can instanciate 3 new cars
-            //Set the properties for each of the cars
-            //Call each of the methods for each car
+
+            BigBeau_sCarLot inventory = new BigBeau_sCarLot();
+
+            
+
+            Car car1= new Car();
+            car1.Year = 2004;
+            car1.Make = "Kia";
+            car1.Model = "Spectra";
+            car1.EngineNoise = "Vroom";
+            car1.HonkNoise = "Beep";
+            car1.IsDriveable = true;
+
+            inventory.CarList.Add(car1);
+
+            Car car2 = new Car() 
+            { 
+                Year = 2011, 
+                Make = "Saturn", 
+                Model = "SL7", 
+                EngineNoise = "Broom", 
+                HonkNoise = "Meep", 
+                IsDriveable = false 
+            };
+
+            inventory.CarList.Add(car2);
+
+
+            Car car3 = new Car(2013, "Saturn", "Ion", "Groom", "Haunk", false);
+            
+            inventory.CarList.Add(car3);
+
+            foreach (var car in inventory.CarList)
+            {
+                Console.WriteLine($"Year: {car.Year} Make: {car.Make} Model: {car.Model}");
+            }
+
+            //Set the properties for each of the cars - Done
+            //Call each of the methods for each car - Done
 
             //*************BONUS*************//
 
